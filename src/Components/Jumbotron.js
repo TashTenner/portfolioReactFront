@@ -6,23 +6,15 @@ import quoteTash from '../assets/quoteTash.jpg';
 
 const Styles = styled.div`
   .jumbo {
-    background: #002B36 url(${quoteTash}) no-repeat bottom;
+    background: #002B36 url(${quoteTash}) no-repeat center;
     background-size: contain;
-    height: 140px;
-    @media ${device.mobileM} {
-      height: 160px;
-  }
-    @media ${device.mobileL} {
-      background-position: center;
-      height: 245px;
-  }
+    margin-bottom: 0px;
+    margin-top: 56px;
     @media ${device.sizeInbetween} {
-      background-position: center;
-      background-size: 600px;
-      height: 245px;
+      height: 180px;
   }
     @media ${device.tablet} {
-      height: 245px;
+      height: 180px;
   }
     width: 100vw;
     position: relative;
