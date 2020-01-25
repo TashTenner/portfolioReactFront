@@ -55,10 +55,10 @@ const PhotoIcon = styled.div`
 
 const StyledImage = styled.img`
   border-radius: 100px;
-  box-shadow: 0 4px 28px 0 #212529, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 28px 0 #212529, 0 6px 20px 0 #000000;
   height: 100px;
   &:hover {
-    box-shadow: 0 4px 48px 0 #212529, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 48px 0 #212529, 0 6px 20px 0 #000000;
     }
 `;
 
