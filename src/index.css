@@ -27,3 +27,7 @@ h2 {
 p {
   margin-bottom: 0;
 }
+
+.btn-group {
+  display: initial;
+}

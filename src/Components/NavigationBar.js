@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, SplitButton, Dropdown } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const Styles = styled.div`
@@ -22,6 +22,42 @@ const Styles = styled.div`
       color: #212529;
     }
   }
+  .dropdown-item.active, .dropdown-item:active {
+    background-color: #fcfcff;
+  }
+`;
+
+const StyledSplitButton = styled(SplitButton)`
+  a.active.focus,
+  a.active:focus,
+  a.focus,
+  a:active.focus,
+  a:active:focus,
+  a:focus,
+  button.active.focus,
+  button.active:focus,
+  button.focus,
+  button:active.focus,
+  button:active:focus,
+  button:focus,
+  .btn.active.focus,
+  .btn.active:focus,
+  .btn.focus,
+  .btn:active.focus,
+  .btn:active:focus,
+  .btn:focus {
+      outline: 0;
+      outline-color: transparent;
+      outline-width: 0;
+      outline-style: none;
+      box-shadow: 0 0 0 0 rgba(0,123,255,0);
+  }
+  a { 
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+  }
 `;
 
 export const NavigationBar = () => (
@@ -31,10 +67,23 @@ export const NavigationBar = () => (
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link eventKey="1" as={Link} to="/projects">Projects</Nav.Link>
-          <Nav.Link eventKey="2" as={Link} to="/linguistics">Linguistics</Nav.Link>
-          <Nav.Link eventKey="3" as={Link} to="/about">About me</Nav.Link>
-          <Nav.Link eventKey="4" as={Link} to="/contact">Contact</Nav.Link>
+          <Nav.Link eventKey={1} as={Link} to="/about">About me</Nav.Link>
+          <StyledSplitButton variant="default" eventKey={2} title="Linguistics" href="/linguistics">
+            <Dropdown.Item eventKey={2.1} as={Link} to="/linguistics/posts">Posts</Dropdown.Item>
+            <Dropdown.Item eventKey={2.2} as={Link} to="/linguistics/podcast">Podcast</Dropdown.Item>
+            <Dropdown.Item eventKey={2.3} as={Link} to="/linguistics/infographics">Infographics</Dropdown.Item>
+            <Dropdown.Item eventKey={2.4} as={Link} to="/linguistics/lessons">Lessons</Dropdown.Item>
+            <Dropdown.Item eventKey={2.5} as={Link} to="/linguistics/phonetics">Phonetics</Dropdown.Item>
+            <Dropdown.Item eventKey={2.6} as={Link} to="/linguistics/etymology">Etymology</Dropdown.Item>
+          </StyledSplitButton>
+          <StyledSplitButton variant="default" eventKey={3} title="WebDev Projects" href="/projects">
+            <Dropdown.Item eventKey={3.1} as={Link} to="/projects/fonetikas">Fonetikas</Dropdown.Item>
+            <Dropdown.Item eventKey={3.2} as={Link} to="/projects/plantiful">Plantiful</Dropdown.Item>
+            <Dropdown.Item eventKey={3.3} as={Link} to="/projects/bailo-app">bailo.app</Dropdown.Item>
+            <Dropdown.Item eventKey={3.4} as={Link} to="/projects/react-3-hour-challenge">React-3-hour-challenge</Dropdown.Item>
+            <Dropdown.Item eventKey={3.5} as={Link} to="/projects/portfolio">Portfolio</Dropdown.Item>
+          </StyledSplitButton>
+          <Nav.Link eventKey={4} as={Link} to="/contact">Contact</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

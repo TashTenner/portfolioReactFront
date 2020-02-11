@@ -19,21 +19,15 @@ const Links = styled.div`
     margin: 2rem 1rem;
     padding: 1.5rem;
     text-align: center;
-    background: #268bd280; 
+    background: #268bd280;
 `;
 
 const StyledLink = styled(Link)`
   color: #268bd2;
   text-decoration: underline;
     &:hover {
-      color: #fcfcff;
+      color: #838383;
     }
-    &.active {
-      color: #212529;
-    }
-    &:focus {
-      color: #212529;
-  }
 `;
 
 const IntroBox = styled.div`
@@ -65,46 +59,44 @@ const StyledImage = styled.img`
 class Home extends Component {
   render() {
     return (
-      <>
-        <IntroBox>
-          <LeftIntro>
-            <h1>Hi! I am Tash,</h1>
-            <h2>A Linguist who became a Full Stack Web Developer</h2>
-            <Loop>
-              <TextLoop interval={900} springConfig={{ stiffness: 180, damping: 80 }}>
-                <p>#Linguist</p>
-                <p>#Web Developer</p>
-                <p>#Traveller</p>
-                <p>#Tango dancer</p>
-                <p>#Cat lover</p>
-                <p>#Multilingual</p>
-                <p>#German native</p>
-                <p>#Barcelona based</p>
-                <p>#Healthy food</p>
-              </TextLoop>
-            </Loop>
-          </LeftIntro>
-          <PhotoIcon>
-            <Link to="/about" title="About me">
-              <StyledImage src={tashIcon} rel="noopener noreferrer" alt="tashIcon"></StyledImage>
-            </Link>
-          </PhotoIcon>
-          <Links>
-            <div>
-              <p>Sneak into my past:</p>
-              <StyledLink to="/linguistics">Linguistic projects</StyledLink>
-            </div>
-            <div>
-              <p>Discover my present:</p>
-              <StyledLink to="/projects">Web Development projects</StyledLink>
-            </div>
-            <div>
-              <p>Create synergies with me in the future:</p>
-              <StyledLink to="/contact">Contact me</StyledLink>
-            </div>
-          </Links>
-        </IntroBox>
-      </>
+      <IntroBox>
+        <LeftIntro>
+          <h1>Hi! I am Tash,</h1>
+          <h2>A Linguist who became a Full Stack Web Developer</h2>
+          <Loop>
+            <TextLoop interval={900} springConfig={{ stiffness: 180, damping: 80 }}>
+              <p>#Linguist</p>
+              <p>#Web Developer</p>
+              <p>#Traveller</p>
+              <p>#Tango dancer</p>
+              <p>#Cat lover</p>
+              <p>#Multilingual</p>
+              <p>#German native</p>
+              <p>#Barcelona based</p>
+              <p>#Healthy food</p>
+            </TextLoop>
+          </Loop>
+        </LeftIntro>
+        <PhotoIcon>
+          <Link to="/about" title="About me">
+            <StyledImage src={tashIcon} rel="noopener noreferrer" alt="Icon of Tash Tenner"></StyledImage>
+          </Link>
+        </PhotoIcon>
+        <Links>
+          <div>
+            <p>Sneak into my past:</p>
+            <StyledLink to="/linguistics">Linguistics</StyledLink>
+          </div>
+          <div>
+            <p>Discover my present:</p>
+            <StyledLink to="/projects">Web Development projects</StyledLink>
+          </div>
+          <div>
+            <p>Create synergies with me in the future:</p>
+            <StyledLink to="/contact">Contact me</StyledLink>
+          </div>
+        </Links>
+      </IntroBox>
     );
   }
 }
