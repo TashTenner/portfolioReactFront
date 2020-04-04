@@ -1,68 +1,46 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import projectService from "../services/projectService";
 
 class Projects extends Component {
+  state = {
+    projects: [],
+    loading: true,
+    // redirect: false
+  };
+
+  async componentDidMount() {
+    try {
+      const projects = await projectService.getAllProjects()
+      this.setState({
+        projects,
+        loading: false
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   render() {
+    const { projects, loading } = this.state;
     return (
       <div>
-        <div>Projects</div>
-        <div>Personal Website</div>
-        <div>Personal Website logo</div>
-        <div>Lorem Ipsum - textblock</div>
-        <div>Fonetikas</div>
-        <div>Fonetikas logo</div>
-        <div> Lorem Ipsum</div>
-        <div>Hochzeit</div>
-        <div>Hochzeit logo</div>
-        <div>Lorem Ipsum</div>
-        <div>Bailo.app Web</div>
-        <div>Bailo.app Web logo</div>
-        <div>Lorem Ipsum</div>
-        <div>©2019 Tash Tenner</div>
-        <br></br>
-        <div>Projects</div>
-        <div>Personal Website</div>
-        <div>Personal Website logo</div>
-        <div>Lorem Ipsum - textblock</div>
-        <div>Fonetikas</div>
-        <div>Fonetikas logo</div>
-        <div> Lorem Ipsum</div>
-        <div>Hochzeit</div>
-        <div>Hochzeit logo</div>
-        <div>Lorem Ipsum</div>
-        <div>Bailo.app Web</div>
-        <div>Bailo.app Web logo</div>
-        <div>Lorem Ipsum</div>
-        <div>©2019 Tash Tenner</div>
-        <br></br>
-        <div>Projects</div>
-        <div>Personal Website</div>
-        <div>Personal Website logo</div>
-        <div>Lorem Ipsum - textblock</div>
-        <div>Fonetikas</div>
-        <div>Fonetikas logo</div>
-        <div> Lorem Ipsum</div>
-        <div>Hochzeit</div>
-        <div>Hochzeit logo</div>
-        <div>Lorem Ipsum</div>
-        <div>Bailo.app Web</div>
-        <div>Bailo.app Web logo</div>
-        <div>Lorem Ipsum</div>
-        <div>©2019 Tash Tenner</div>
-        <br></br>
-        <div>Projects</div>
-        <div>Personal Website</div>
-        <div>Personal Website logo</div>
-        <div>Lorem Ipsum - textblock</div>
-        <div>Fonetikas</div>
-        <div>Fonetikas logo</div>
-        <div> Lorem Ipsum</div>
-        <div>Hochzeit</div>
-        <div>Hochzeit logo</div>
-        <div>Lorem Ipsum</div>
-        <div>Bailo.app Web</div>
-        <div>Bailo.app Web logo</div>
-        <div>Lorem Ipsum</div>
-        <div>©2019 Tash Tenner</div>
+        Projects
+        {/* <ProjectCard project={project} /> */}
+        <div>
+          <ul>
+            {!loading && projects.map((project) => {
+              return (
+                project ?
+                  <div key={project._id}>
+                    <Link to={`/projects/${project.titleURL}`}>{project.title}</Link>
+                  </div>
+                  : <div></div>
+              )
+            })}
+            {loading && <div>loading...</div>}
+          </ul>
+        </div>
       </div>
     );
   }
