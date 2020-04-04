@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { Nav, Navbar, SplitButton, Dropdown } from 'react-bootstrap';
 import styled from 'styled-components';
+import logo from '../assets/logo.png';
 
 const Styles = styled.div`
   .navbar {
@@ -60,10 +61,20 @@ const StyledSplitButton = styled(SplitButton)`
   }
 `;
 
+const StyledImage = styled.img`
+  border-radius: 5px;
+  margin-right: 5px;
+  width: 1.5em; 
+  height: 1.5em; 
+`;
+
 export const NavigationBar = () => (
   <Styles>
     <Navbar collapseOnSelect expand="lg" fixed="top">
-      <Navbar.Brand as={Link} to="/">Tash Tenner</Navbar.Brand>
+      <Navbar.Brand as={Link} to="/">
+        <StyledImage src={logo} alt="logo" className="d-inline-block align-top" />
+        Tash Tenner
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">

@@ -122,7 +122,8 @@ class About extends Component {
         <SkillsDiv>
           <DividedSkillsDiv>
             <SkillsTitle>Coding skills</SkillsTitle>
-            <SkillsText>JavaScript, HTML & CSS, React, MongoDB, Express, NodeJS, Bootstrap, Git & GitHub, ES6, Mongoose, RESTful WebServices, Postman</SkillsText>
+            <SkillsText className="no-margin-bottom">Main: JavaScript, React, HTML & CSS, Redux</SkillsText>
+            <SkillsText className="no-margin-top">Additional: MongoDB, Express, NodeJS, Bootstrap, Git & GitHub, ES6, Mongoose, RESTful WebServices, Postman, Mapbox, Balsamiq Wireframes</SkillsText>
           </DividedSkillsDiv>
           <DividedSkillsDiv className="center">
             <SkillsTitle>Linguistic skills</SkillsTitle>

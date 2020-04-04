@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-// import PostCard from "../Components/PostCard";
+import { Accordion, Card, Button } from 'react-bootstrap';
 import postService from "../../services/postService";
 
 class Infographics extends Component {
@@ -29,38 +28,100 @@ class Infographics extends Component {
         Infographics
         <div>DID YOU KNOW THAT ...? ... the word "talent" was used as a unit to measure? These quotes and linguistic infographics reflect the observations I made in the areas of linguistics, philosophy, psychology, evolution, culture, religion and other interdisciplinary areas.</div>
         <div>SABÍAS QUE ...? ... la palabra "talento" era una unidad de medida? Estas citas e infografías lingüísticas reflejan las observaciones que hice en las áreas de la lingüística, filosofía, psicología, evolución, cultura, religión y otras áreas interdisciplinarias.</div>
-        <div>Infografía en español</div>
-        <div>
-          <ul>
-            {!loading && posts.map((post) => {
-              return (
-                post && (post.category.__cdata === "Infografía en español") ?
-                  <div key={post._id}>
-                    <Link to={`/posts/${post._id}`}>{post.title}</Link>
+        <Accordion>
+          <Card>
+            <Card.Header>
+              <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                <div>Infografías en español</div>
+              </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="0">
+              <Card.Body>
+                <Accordion>
+                  <div>
+                    <ul>
+                      {!loading && posts
+                        .sort((a, b) =>
+                          (parseInt(a.title.substring(0, a.title.indexOf(' ')).replace(/\D/g, ''))) > (parseInt(b.title.substring(0, b.title.indexOf(' ')).replace(/\D/g, ''))) ? 1 :
+                            (parseInt(b.title.substring(0, b.title.indexOf(' ')).replace(/\D/g, ''))) > (parseInt(a.title.substring(0, a.title.indexOf(' ')).replace(/\D/g, ''))) ? -1 : 0)
+                        .map((post) => {
+                          return (
+                            post && (post.category.__cdata === "Infografía en español") ?
+                              <div key={post._id}>
+                                <Accordion>
+                                  <Card>
+                                    <Card.Header>
+                                      <Accordion.Toggle as={Button} variant="link" eventKey="0">{post.title}</Accordion.Toggle>
+                                    </Card.Header>
+                                    <Accordion.Collapse eventKey="0">
+                                      <Card.Body>
+                                        <div>{post.pubDate.substring(0, 16)}</div>
+                                        <img
+                                          src={post.linkPic}
+                                          alt="new"
+                                        />
+                                      </Card.Body>
+                                    </Accordion.Collapse>
+                                  </Card>
+                                </Accordion>
+                              </div>
+                              : <div></div>
+                          )
+                        }
+                        )}
+                      {loading && <div>loading...</div>}
+                    </ul>
                   </div>
-                  : <div></div>
-              )
-            }
-            )}
-            {loading && <div>loading...</div>}
-          </ul>
-        </div>
-        <div>Infographic in English</div>
-        <div>
-          <ul>
-            {!loading && posts.map((post) => {
-              return (
-                post && (post.category.__cdata === "Infographic in English") ?
-                  <div key={post._id}>
-                    <Link to={`/posts/${post._id}`}>{post.title}</Link>
-                  </div>
-                  : <div></div>
-              )
-            }
-            )}
-            {loading && <div>loading...</div>}
-          </ul>
-        </div>
+                </Accordion>
+              </Card.Body>
+            </Accordion.Collapse>
+          </Card>
+          <Card>
+            <Card.Header>
+              <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                <div>Infographics in English</div>
+              </Accordion.Toggle>
+            </Card.Header>
+            <Accordion.Collapse eventKey="1">
+              <Card.Body><Accordion>
+                <div>
+                  <ul>
+                    {!loading && posts
+                      .sort((a, b) =>
+                        (parseInt(a.title.substring(0, a.title.indexOf(' ')).replace(/\D/g, ''))) > (parseInt(b.title.substring(0, b.title.indexOf(' ')).replace(/\D/g, ''))) ? 1 :
+                          (parseInt(b.title.substring(0, b.title.indexOf(' ')).replace(/\D/g, ''))) > (parseInt(a.title.substring(0, a.title.indexOf(' ')).replace(/\D/g, ''))) ? -1 : 0)
+                      .map((post) => {
+                        return (
+                          post && (post.category.__cdata === "Infographic in English") ?
+                            <div key={post._id}>
+                              <Accordion>
+                                <Card>
+                                  <Card.Header>
+                                    <Accordion.Toggle as={Button} variant="link" eventKey="0">{post.title}</Accordion.Toggle>
+                                  </Card.Header>
+                                  <Accordion.Collapse eventKey="0">
+                                    <Card.Body>
+                                      <div>{post.pubDate.substring(0, 16)}</div>
+                                      <img
+                                        src={post.linkPic}
+                                        alt="new"
+                                      />
+                                    </Card.Body>
+                                  </Accordion.Collapse>
+                                </Card>
+                              </Accordion>
+                            </div>
+                            : <div></div>
+                        )
+                      }
+                      )}
+                    {loading && <div>loading...</div>}
+                  </ul>
+                </div>
+              </Accordion></Card.Body>
+            </Accordion.Collapse>
+          </Card>
+        </Accordion>
       </div>
     );
   }
