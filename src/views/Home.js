@@ -41,6 +41,11 @@ const LeftIntro = styled.div`
   margin: 2rem 1rem;
 `;
 
+const MarginTB = styled.div`
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+`;
+
 const PhotoIcon = styled.div`
   margin: 2rem 1rem;
   display: flex;
@@ -73,7 +78,7 @@ class Home extends Component {
               <p>#Multilingual</p>
               <p>#German native</p>
               <p>#Barcelona based</p>
-              <p>#Healthy food</p>
+              <p>#Healthy foodie</p>
             </TextLoop>
           </Loop>
         </LeftIntro>
@@ -83,18 +88,18 @@ class Home extends Component {
           </Link>
         </PhotoIcon>
         <Links>
-          <div>
+          <MarginTB>
             <p>Sneak into my past:</p>
             <StyledLink to="/linguistics">Linguistics</StyledLink>
-          </div>
-          <div>
+          </MarginTB>
+          <MarginTB>
             <p>Discover my present:</p>
             <StyledLink to="/projects">Web Development projects</StyledLink>
-          </div>
-          <div>
+          </MarginTB>
+          <MarginTB>
             <p>Create synergies with me in the future:</p>
             <StyledLink to="/contact">Contact me</StyledLink>
-          </div>
+          </MarginTB>
         </Links>
       </IntroBox>
     );

@@ -83,9 +83,9 @@ export const NavigationBar = () => (
             <Dropdown.Item eventKey={2.1} as={Link} to="/linguistics/posts">Posts</Dropdown.Item>
             <Dropdown.Item eventKey={2.2} as={Link} to="/linguistics/podcast">Podcast</Dropdown.Item>
             <Dropdown.Item eventKey={2.3} as={Link} to="/linguistics/infographics">Infographics</Dropdown.Item>
-            <Dropdown.Item eventKey={2.4} as={Link} to="/linguistics/lessons">Lessons</Dropdown.Item>
-            <Dropdown.Item eventKey={2.5} as={Link} to="/linguistics/phonetics">Phonetics</Dropdown.Item>
-            <Dropdown.Item eventKey={2.6} as={Link} to="/linguistics/etymology">Etymology</Dropdown.Item>
+            <Dropdown.Item eventKey={2.4} as={Link} to="/linguistics/phonology">Phonology</Dropdown.Item>
+            <Dropdown.Item eventKey={2.5} as={Link} to="/linguistics/etymology">Etymology</Dropdown.Item>
+            <Dropdown.Item eventKey={2.6} as={Link} to="/linguistics/lessons">Lessons</Dropdown.Item>
           </StyledSplitButton>
           <StyledSplitButton variant="default" eventKey={3} title="WebDev Projects" href="/projects">
             <Dropdown.Item eventKey={3.1} as={Link} to="/projects/fonetikas">Fonetikas</Dropdown.Item>

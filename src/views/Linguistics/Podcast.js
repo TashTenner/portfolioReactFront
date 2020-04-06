@@ -1,13 +1,40 @@
 import React, { Component } from 'react';
 import { Accordion, Card, Button } from 'react-bootstrap';
 import postService from "../../services/postService";
-import YouTube from "react-youtube";
+import styled from 'styled-components';
+
+const Styles = styled.div`
+  button, .btn, .btn-link {
+    color: #268bd2;
+    text-align: left;
+    &:hover {
+      color: #838383;
+      text-decoration: none;
+    }
+    &.active {
+      color: #212529;
+      text-decoration: none;
+    }
+    &:focus {
+      color: #212529;
+      text-decoration: none;
+    }
+  }
+`;
+
+const TitlePodcast = styled.h1`
+  margin: 2rem 0.5rem;
+`;
+
+const StyledDiv = styled.div`
+  margin: 2rem 0.5rem;
+  text-align: justify;
+`;
 
 class Podcast extends Component {
   state = {
     posts: [],
     loading: true,
-    // redirect: false
   };
 
   async componentDidMount() {
@@ -24,19 +51,13 @@ class Podcast extends Component {
 
   render() {
     const { posts, loading } = this.state;
-    const opts = {
-      height: '390',
-      width: '640',
-      playerVars: {
-        autoplay: 0,
-      },
-    };
+
     return (
-      <div>
-        Podcast
-        <div>¿Tienes​ ​el​ ​cinturón​ ​de​ ​seguridad​ ​abrochado?​ Que​ ​estamos​ ​a​ ​punto​ ​de​ ​entrar a​ ​las​ profundidades​ ​de​ ​los idiomas.​ Nuestro​ ​objetivo​ ​común:​ Descubrir los idiomas que hay en ti. ¡Suscríbete! iVoox | iTunes | YouTube | TuneIn</div>
-        <div>https://www.ivoox.com/podcast-fonetikas_sq_f1363462_3.html</div>
-        <div>
+      <Styles>
+        <TitlePodcast>Podcast</TitlePodcast>
+        <StyledDiv>The intention of this podcast is to dive into the world of languages - for Spanish speakers. There are 100 episodes in Spanish that you can listen to either on <a href="https://www.youtube.com/playlist?list=PL0DgSpA03NEiZqiCZQFvo3hEWG6YHYN27" target="_blank" rel="noopener noreferrer">YouTube</a> or <a href="https://www.ivoox.com/podcast-fonetikas_sq_f1363462_3.html" target="_blank" rel="noopener noreferrer">Ivoox</a>. Let's hope the following 100 episodes will be in English. <span role="img" aria-label="smiley">😃</span></StyledDiv>
+        <StyledDiv><span role="img" aria-label="es">🇪🇸</span> ¿Tienes​ ​el​ ​cinturón​ ​de​ ​seguridad​ ​abrochado?​ Que​ ​estamos​ ​a​ ​punto​ ​de​ ​entrar a​ ​las​ profundidades​ ​de​ ​los idiomas.​ Nuestro​ ​objetivo​ ​común:​ Descubrir los idiomas que hay en ti. ¡Suscríbete en iVoox | iTunes | YouTube | TuneIn!</StyledDiv>
+        <StyledDiv>
           <ul>
             {!loading && posts
               .sort((a, b) =>
@@ -53,24 +74,22 @@ class Podcast extends Component {
                           </Card.Header>
                           <Accordion.Collapse eventKey="1">
                             <Card.Body>
-                              <div>
-                                <YouTube videoId={post.linkYT.substring(32, 43)} opts={opts} />
-                              </div>
+                              <a href={post.linkYT} target="_blank" rel="noopener noreferrer">YouTube Link</a>
                               <div>{post.pubDate.substring(0, 16)}</div>
-                              <div>{post.encoded[0].__cdata}</div>
+                              <div>Bullet points: {post.encoded[0].__cdata}</div>
                             </Card.Body>
                           </Accordion.Collapse>
                         </Card>
                       </Accordion>
                     </div>
-                    : <div></div>
+                    : <div key={post._id}></div>
                 )
               }
               )}
             {loading && <div>loading...</div>}
           </ul>
-        </div>
-      </div>
+        </StyledDiv>
+      </Styles>
     );
   }
 }
