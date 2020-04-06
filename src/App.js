@@ -7,7 +7,7 @@ import Posts from "./views/Linguistics/Posts";
 import Podcast from "./views/Linguistics/Podcast";
 import Infographics from "./views/Linguistics/Infographics";
 import Lessons from "./views/Linguistics/Lessons";
-import Phonetics from "./views/Linguistics/Phonetics";
+import Phonology from "./views/Linguistics/Phonology";
 import Etymology from "./views/Linguistics/Etymology";
 import Projects from "./views/Projects";
 import Fonetikas from "./views/WebDevProjects/Fonetikas";
@@ -48,7 +48,7 @@ class App extends Component {
               <Route exact path="/linguistics/podcast" component={Podcast} />
               <Route exact path="/linguistics/infographics" component={Infographics} />
               <Route exact path="/linguistics/lessons" component={Lessons} />
-              <Route exact path="/linguistics/phonetics" component={Phonetics} />
+              <Route exact path="/linguistics/phonology" component={Phonology} />
               <Route exact path="/linguistics/etymology" component={Etymology} />
               <Route exact path="/projects" component={Projects} />
               <Route exact path="/projects/fonetikas" component={Fonetikas} />
