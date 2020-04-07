@@ -64,7 +64,7 @@ class Infographics extends Component {
           <Accordion>
             <Card>
               <Card.Header>
-                <Accordion.Toggle as={Button} variant="link" eventKey="0">Infografías en español</Accordion.Toggle>
+                <Accordion.Toggle as={Button} variant="link" eventKey="0">Infographics in English</Accordion.Toggle>
               </Card.Header>
               <Accordion.Collapse eventKey="0">
                 <Card.Body>
@@ -77,7 +77,7 @@ class Infographics extends Component {
                               (parseInt(b.title.substring(0, b.title.indexOf(' ')).replace(/\D/g, ''))) > (parseInt(a.title.substring(0, a.title.indexOf(' ')).replace(/\D/g, ''))) ? -1 : 0)
                           .map((post) => {
                             return (
-                              post && (post.category.__cdata === "Infografía en español") ?
+                              post && (post.category.__cdata === "Infographic in English") ?
                                 <div key={post._id}>
                                   <Accordion>
                                     <Card>
@@ -87,9 +87,8 @@ class Infographics extends Component {
                                       <Accordion.Collapse eventKey="0">
                                         <Card.Body>
                                           <div>{post.pubDate.substring(0, 16)}</div>
-                                          <a href="https://res.cloudinary.com/tash-tenner/image/upload/v1586266942/testing/test_vrmbgl.png" target="_blank" rel="noopener noreferrer">
-                                            <StyledImg src="https://res.cloudinary.com/tash-tenner/image/upload/v1586266942/testing/test_vrmbgl.png" alt="infographic" />
-                                            {/* "https://www.tash-tenner.com/img/quiero-otra-manzana.png" */}
+                                          <a href={post.linkPic} target="_blank" rel="noopener noreferrer">
+                                            <StyledImg src={post.linkPic} alt="infographic" />
                                           </a>
                                         </Card.Body>
                                       </Accordion.Collapse>
@@ -109,7 +108,7 @@ class Infographics extends Component {
             </Card>
             <Card>
               <Card.Header>
-                <Accordion.Toggle as={Button} variant="link" eventKey="1">Infographics in English</Accordion.Toggle>
+                <Accordion.Toggle as={Button} variant="link" eventKey="1">Infografías en español</Accordion.Toggle>
               </Card.Header>
               <Accordion.Collapse eventKey="1">
                 <Card.Body><Accordion>
@@ -121,7 +120,7 @@ class Infographics extends Component {
                             (parseInt(b.title.substring(0, b.title.indexOf(' ')).replace(/\D/g, ''))) > (parseInt(a.title.substring(0, a.title.indexOf(' ')).replace(/\D/g, ''))) ? -1 : 0)
                         .map((post) => {
                           return (
-                            post && (post.category.__cdata === "Infographic in English") ?
+                            post && (post.category.__cdata === "Infografía en español") ?
                               <div key={post._id}>
                                 <Accordion>
                                   <Card>
@@ -131,10 +130,9 @@ class Infographics extends Component {
                                     <Accordion.Collapse eventKey="0">
                                       <Card.Body>
                                         <div>{post.pubDate.substring(0, 16)}</div>
-                                        <StyledImg
-                                          src={post.linkPic}
-                                          alt="infographic"
-                                        />
+                                        <a href={post.linkPic} target="_blank" rel="noopener noreferrer">
+                                          <StyledImg src={post.linkPic} alt="infographic" />
+                                        </a>
                                       </Card.Body>
                                     </Accordion.Collapse>
                                   </Card>
