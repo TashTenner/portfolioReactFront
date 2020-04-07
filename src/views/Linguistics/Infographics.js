@@ -87,8 +87,9 @@ class Infographics extends Component {
                                       <Accordion.Collapse eventKey="0">
                                         <Card.Body>
                                           <div>{post.pubDate.substring(0, 16)}</div>
-                                          <a href={post.linkPic} title="CV" target="_blank" rel="noopener noreferrer">
-                                            <StyledImg src={post.linkPic} alt="infographic" />
+                                          <a href="https://res.cloudinary.com/tash-tenner/image/upload/v1586266942/testing/test_vrmbgl.png" target="_blank" rel="noopener noreferrer">
+                                            <StyledImg src="https://res.cloudinary.com/tash-tenner/image/upload/v1586266942/testing/test_vrmbgl.png" alt="infographic" />
+                                            {/* "https://www.tash-tenner.com/img/quiero-otra-manzana.png" */}
                                           </a>
                                         </Card.Body>
                                       </Accordion.Collapse>
