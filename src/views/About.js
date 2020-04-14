@@ -40,6 +40,10 @@ const StyledLink = styled.a`
   margin: 0.5em;
   color: #268bd2;
   font-weight: bold;
+  text-decoration: underline;
+    &:hover {
+      color: #838383;
+    }
 `;
 
 const StyledLinkRouter = styled(Link)`
@@ -123,7 +127,7 @@ class About extends Component {
           <DividedSkillsDiv>
             <SkillsTitle>Coding skills</SkillsTitle>
             <SkillsText className="no-margin-bottom">Main: JavaScript, React, HTML & CSS, Redux</SkillsText>
-            <SkillsText className="no-margin-top">Additional: MongoDB, Express, NodeJS, Bootstrap, Styled Components, Git & GitHub, ES6, Mongoose, RESTful WebServices, Postman, Mapbox, Balsamiq Wireframes</SkillsText>
+            <SkillsText className="no-margin-top">Additional: MongoDB, Express, NodeJS, Bootstrap, Styled Components, Git & GitHub, ES6, Mongoose, RESTful WebServices, Postman, Mapbox, Figma, Balsamiq Wireframes</SkillsText>
           </DividedSkillsDiv>
           <DividedSkillsDiv className="center">
             <SkillsTitle>Linguistic skills</SkillsTitle>
