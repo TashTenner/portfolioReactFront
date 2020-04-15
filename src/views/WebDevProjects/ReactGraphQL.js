@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import projectService from '../../services/projectService';
 import ProjectCard from '../../Components/ProjectCard';
 
-class Fonetikas extends Component {
+class ReactGraphQL extends Component {
 
   state = {
     project: {},
@@ -11,7 +11,7 @@ class Fonetikas extends Component {
 
   async componentDidMount() {
     try {
-      const project = await projectService.getProjectById("5e4301f11c9d4400000912da")
+      const project = await projectService.getProjectById("5e97286e1c9d440000b61810")
       this.setState({
         project,
         loading: false,
@@ -35,4 +35,4 @@ class Fonetikas extends Component {
   }
 }
 
-export default Fonetikas;
+export default ReactGraphQL;

@@ -1,69 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import projectService from "../services/projectService";
-import styled from 'styled-components';
-import { device } from '../services/device';
-
-const ProjectsBox = styled.div`
-  @media ${device.sizeInbetween} {
-    display: flex;
-    align-items: flex-start;
-    margin: 0 auto;
-  }
-`;
-
-const LeftBox = styled.div`
-  @media ${device.sizeInbetween} {
-    width: 66%;
-  }
-`;
-
-const MarginTB = styled.div`
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-`;
-
-const TitleProjects = styled.h1`
-  margin: 2rem 0.5rem;
-`;
-
-const StyledLi = styled.li`
-  margin: 0.5rem 2rem;
-  list-style-type: circle;
-`;
-
-const SubTitle = styled.h2`
-  margin: 2rem 0.5rem;
-  font-weight: bold;
-`;
-
-const SubTitleLinks = styled.h2`
-  font-weight: bold;
-`;
-
-const Links = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 4px;
-  margin: 2rem 1rem;
-  padding: 1.5rem;
-  text-align: center;
-  background: #268bd280;
-  @media ${device.sizeInbetween} {
-    width: 33%;
-    position: sticky; 
-    top: 50px;
-  }
-`;
-
-const StyledLink = styled(Link)`
-  color: #268bd2;
-  text-decoration: underline;
-    &:hover {
-      color: #838383;
-    }
-`;
+import { MarginH1, StyledLinkRouter, H2Title, SubTitleLinks, MediaQueriesBox, LeftBox, StyledLi, MarginTB, LinksWithMedia, StyledLink } from "../views/Styles";
 
 class Projects extends Component {
   state = {
@@ -86,15 +23,14 @@ class Projects extends Component {
   render() {
     const { projects, loading } = this.state;
     return (
-
-      <ProjectsBox>
+      <MediaQueriesBox>
         <LeftBox>
-          <TitleProjects>Web Development</TitleProjects>
-          <SubTitle>Certificate:</SubTitle>
+          <MarginH1>Web Development</MarginH1>
+          <H2Title>Certificate:</H2Title>
           <ul>
-            <StyledLi>Ironhack - Web Development Barcelona, May 2019 - December 2019, Part Time: <a href="https://www.credential.net/1d259fcf-950b-499e-84ea-3c93b2d5a301" target="_blank" rel="noopener noreferrer">Graduation Certificate</a></StyledLi>
+            <StyledLi>Ironhack - Web Development Barcelona, May 2019 - December 2019, Part Time: <StyledLink href="https://www.credential.net/1d259fcf-950b-499e-84ea-3c93b2d5a301" target="_blank" rel="noopener noreferrer">Graduation Certificate</StyledLink></StyledLi>
           </ul>
-          <SubTitle>What motivates me to code:</SubTitle>
+          <H2Title>What motivates me to code:</H2Title>
           <ul>
             <StyledLi>Coding solves real world issues and empoweres us to communicate, order items, accept payments, connect, share & collaborate.</StyledLi>
             <StyledLi>Programming gives me a sense of control, as I am in charge of solving the puzzle.</StyledLi>
@@ -102,7 +38,7 @@ class Projects extends Component {
             <StyledLi>I can observe how the programming world and coding languages change over time.</StyledLi>
           </ul>
         </LeftBox>
-        <Links>
+        <LinksWithMedia>
           <SubTitleLinks>Projects:</SubTitleLinks>
           <div>
             <ul>
@@ -110,7 +46,7 @@ class Projects extends Component {
                 return (
                   project ?
                     <MarginTB key={project._id}>
-                      <StyledLink to={`/projects/${project.titleURL}`}>{project.title}</StyledLink>
+                      <StyledLinkRouter to={`/projects/${project.titleURL}`}>{project.title}</StyledLinkRouter>
                     </MarginTB>
                     : <div key={project._id}></div>
                 )
@@ -118,8 +54,8 @@ class Projects extends Component {
               {loading && <div>loading...</div>}
             </ul>
           </div>
-        </Links>
-      </ProjectsBox>
+        </LinksWithMedia>
+      </MediaQueriesBox>
     );
   }
 }

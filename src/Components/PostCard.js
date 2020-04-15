@@ -1,5 +1,4 @@
 import React from 'react';
-// import styled from 'styled-components';
 
 const PostCard = props => {
   const {
@@ -11,11 +10,11 @@ const PostCard = props => {
   } = props;
 
   return (
-    <div>
+    <>
       <p>title: {title}</p>
       <p>text: {text}</p>
       <p>category: {category}</p>
-    </div>
+    </>
   );
 };
 

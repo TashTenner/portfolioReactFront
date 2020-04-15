@@ -1,35 +1,7 @@
 import React, { Component } from 'react';
 import { Accordion, Card, Button } from 'react-bootstrap';
-import styled from 'styled-components';
 import postService from "../../services/postService";
-
-const Styles = styled.div`
-  button, .btn, .btn-link {
-    color: #268bd2;
-    text-align: left;
-    &:hover {
-      color: #838383;
-      text-decoration: none;
-    }
-    &.active {
-      color: #212529;
-      text-decoration: none;
-    }
-    &:focus {
-      color: #212529;
-      text-decoration: none;
-    }
-  }
-`;
-
-const TitlePosts = styled.h1`
-  margin: 2rem 0.5rem;
-`;
-
-const StyledDiv = styled.div`
-  margin: 2rem 0.5rem;
-  text-align: justify;
-`;
+import { StylesInfographicsPodcastPosts, MarginH1, StyledDiv } from "../Styles";
 
 class Posts extends Component {
   state = {
@@ -52,8 +24,8 @@ class Posts extends Component {
   render() {
     const { posts, loading } = this.state;
     return (
-      <Styles>
-        <TitlePosts>Posts</TitlePosts>
+      <StylesInfographicsPodcastPosts>
+        <MarginH1>Posts</MarginH1>
         <StyledDiv>The purpose of this blog is to help all those who want to improve their knowledge about learning a foreign language and those who want to know more about the links between languages, culture and science, only to name a few areas that will be covered.</StyledDiv>
         <StyledDiv>As I started the blog in Spanish, all articles are in Spanish. Surely, I will get back one day and either translate them into English or write new posts directly in English. <span role="img" aria-label="smiley">😃</span></StyledDiv>
         <StyledDiv><span role="img" aria-label="es">🇪🇸</span> El objetivo del blog es ayudar a todos que quieran mejorar sus conocimientos en el aprendizaje de una lengua extranjera y que quieran saber más sobre las conexiones entre el idioma, la cultura y la ciencia, para nombrar unos ámbitos.</StyledDiv>
@@ -88,7 +60,7 @@ class Posts extends Component {
             {loading && <div>loading...</div>}
           </ul>
         </StyledDiv>
-      </Styles>
+      </StylesInfographicsPodcastPosts>
     );
   }
 }

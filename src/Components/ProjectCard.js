@@ -1,5 +1,5 @@
 import React from 'react';
-// import styled from 'styled-components';
+import { MarginH1, StyledLi, StyledLink } from "../views/Styles";
 
 const ProjectCard = props => {
   const {
@@ -7,23 +7,27 @@ const ProjectCard = props => {
       title,
       description,
       technologies,
+      additional,
       codeFront,
       codeBack,
-      presentationLink,
+      presentation,
       demo
     }
   } = props;
 
   return (
-    <div>
-      <p>title: {title}</p>
-      <p>description: {description}</p>
-      <p>technologies: {technologies}</p>
-      <p>codeFront: {codeFront}</p>
-      <p>codeBack: {codeBack}</p>
-      <p>presentationLink: {presentationLink}</p>
-      <p>demo: {demo}</p>
-    </div>
+    <>
+      <MarginH1>{title}</MarginH1>
+      <ul>
+        <StyledLi>Description: {description}</StyledLi>
+        <StyledLi>Technologies - Main: {technologies}</StyledLi>
+        <StyledLi>Additional: {additional}</StyledLi>
+        <StyledLi><StyledLink href={codeFront} target="_blank" rel="noopener noreferrer">Code - front</StyledLink></StyledLi>
+        <StyledLi><StyledLink href={codeBack} target="_blank" rel="noopener noreferrer">Code - back</StyledLink></StyledLi>
+        <StyledLi><StyledLink href={presentation} target="_blank" rel="noopener noreferrer">Presentation - Slides</StyledLink></StyledLi>
+        <StyledLi><StyledLink href={demo} target="_blank" rel="noopener noreferrer">Demo</StyledLink></StyledLi>
+      </ul>
+    </>
   );
 };
 

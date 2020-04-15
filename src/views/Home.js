@@ -1,70 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import TextLoop from "react-text-loop";
-import styled from 'styled-components';
-import { device } from '../services/device';
 import tashIcon from '../assets/tashIcon.jpeg';
-
-const Loop = styled.div`
-  color: #212529;
-  margin-top: 3em;
-  margin-bottom: 2em;
-`;
-
-const Links = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 4px;
-    margin: 2rem 1rem;
-    padding: 1.5rem;
-    text-align: center;
-    background: #268bd280;
-`;
-
-const StyledLink = styled(Link)`
-  color: #268bd2;
-  text-decoration: underline;
-    &:hover {
-      color: #838383;
-    }
-`;
-
-const IntroBox = styled.div`
-  @media ${device.sizeInbetween} {
-    display: flex;
-    align-items: flex-start;
-  }
-`;
-
-const LeftIntro = styled.div`
-  margin: 2rem 1rem;
-`;
-
-const MarginTB = styled.div`
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-`;
-
-const PhotoIcon = styled.div`
-  margin: 2rem 1rem;
-  display: flex;
-  justify-content: center;
-`;
-
-const StyledImage = styled.img`
-  border-radius: 100px;
-  box-shadow: 0 4px 28px 0 #212529, 0 6px 20px 0 #000000;
-  height: 100px;
-  &:hover {
-    box-shadow: 0 4px 48px 0 #212529, 0 6px 20px 0 #000000;
-    }
-`;
+import { StyledImageHome, StyledLinkRouter, MediaQueriesBox, Loop, Links, LeftIntro, PhotoIcon, MarginTB } from "../views/Styles";
 
 class Home extends Component {
   render() {
     return (
-      <IntroBox>
+      <MediaQueriesBox>
         <LeftIntro>
           <h1>Hi! I am Tash,</h1>
           <h2>A Linguist who became a Full Stack Web Developer</h2>
@@ -84,24 +27,24 @@ class Home extends Component {
         </LeftIntro>
         <PhotoIcon>
           <Link to="/about" title="About me">
-            <StyledImage src={tashIcon} rel="noopener noreferrer" alt="Icon of Tash Tenner"></StyledImage>
+            <StyledImageHome src={tashIcon} rel="noopener noreferrer" alt="Icon of Tash Tenner"></StyledImageHome>
           </Link>
         </PhotoIcon>
         <Links>
           <MarginTB>
             <p>Sneak into my past:</p>
-            <StyledLink to="/linguistics">Linguistics</StyledLink>
+            <StyledLinkRouter to="/linguistics">Linguistics</StyledLinkRouter>
           </MarginTB>
           <MarginTB>
             <p>Discover my present:</p>
-            <StyledLink to="/projects">Web Development projects</StyledLink>
+            <StyledLinkRouter to="/projects">Web Development projects</StyledLinkRouter>
           </MarginTB>
           <MarginTB>
             <p>Create synergies with me in the future:</p>
-            <StyledLink to="/contact">Contact me</StyledLink>
+            <StyledLinkRouter to="/contact">Contact me</StyledLinkRouter>
           </MarginTB>
         </Links>
-      </IntroBox>
+      </MediaQueriesBox>
     );
   }
 }
