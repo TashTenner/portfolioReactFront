@@ -1,29 +1,13 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-
-const LessonsBox = styled.div`
-  .yellow-brown {
-    color: #b58900;
-    font-weight: bold;
-  }
-`;
-
-const TitleLessons = styled.h1`
-  margin: 2rem 0.5rem;
-`;
-
-const StyledDiv = styled.div`
-  margin: 2rem 0.5rem;
-  text-align: justify;
-`;
+import { MarginH1, StyledDiv } from "../Styles";
 
 class Lessons extends Component {
   render() {
     return (
-      <LessonsBox>
-        <TitleLessons><span role="img" aria-label="construction">🚧</span> Lessons</TitleLessons>
+      <>
+        <MarginH1><span role="img" aria-label="construction">🚧</span> Lessons</MarginH1>
         <StyledDiv>Lessons - German for Spanish speakers</StyledDiv>
-      </LessonsBox>
+      </>
 
     );
   }

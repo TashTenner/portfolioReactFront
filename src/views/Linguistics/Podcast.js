@@ -1,35 +1,7 @@
 import React, { Component } from 'react';
 import { Accordion, Card, Button } from 'react-bootstrap';
 import postService from "../../services/postService";
-import styled from 'styled-components';
-
-const Styles = styled.div`
-  button, .btn, .btn-link {
-    color: #268bd2;
-    text-align: left;
-    &:hover {
-      color: #838383;
-      text-decoration: none;
-    }
-    &.active {
-      color: #212529;
-      text-decoration: none;
-    }
-    &:focus {
-      color: #212529;
-      text-decoration: none;
-    }
-  }
-`;
-
-const TitlePodcast = styled.h1`
-  margin: 2rem 0.5rem;
-`;
-
-const StyledDiv = styled.div`
-  margin: 2rem 0.5rem;
-  text-align: justify;
-`;
+import { StylesInfographicsPodcastPosts, MarginH1, StyledDiv } from "../Styles"
 
 class Podcast extends Component {
   state = {
@@ -53,8 +25,8 @@ class Podcast extends Component {
     const { posts, loading } = this.state;
 
     return (
-      <Styles>
-        <TitlePodcast>Podcast</TitlePodcast>
+      <StylesInfographicsPodcastPosts>
+        <MarginH1>Podcast</MarginH1>
         <StyledDiv>The intention of this podcast is to dive into the world of languages - for Spanish speakers. There are 100 episodes in Spanish that you can listen to either on <a href="https://www.youtube.com/playlist?list=PL0DgSpA03NEiZqiCZQFvo3hEWG6YHYN27" target="_blank" rel="noopener noreferrer">YouTube</a> or <a href="https://www.ivoox.com/podcast-fonetikas_sq_f1363462_3.html" target="_blank" rel="noopener noreferrer">Ivoox</a>. Let's hope the following 100 episodes will be in English. <span role="img" aria-label="smiley">😃</span></StyledDiv>
         <StyledDiv><span role="img" aria-label="es">🇪🇸</span> ¿Tienes​ ​el​ ​cinturón​ ​de​ ​seguridad​ ​abrochado?​ Que​ ​estamos​ ​a​ ​punto​ ​de​ ​entrar a​ ​las​ profundidades​ ​de​ ​los idiomas.​ Nuestro​ ​objetivo​ ​común:​ Descubrir los idiomas que hay en ti. ¡Suscríbete en iVoox | iTunes | YouTube | TuneIn!</StyledDiv>
         <StyledDiv>
@@ -89,7 +61,7 @@ class Podcast extends Component {
             {loading && <div>loading...</div>}
           </ul>
         </StyledDiv>
-      </Styles>
+      </StylesInfographicsPodcastPosts>
     );
   }
 }

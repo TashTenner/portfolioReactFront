@@ -1,76 +1,17 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import styled from 'styled-components';
-import { device } from '../services/device';
-
-const LinguisticsBox = styled.div`
-  @media ${device.sizeInbetween} {
-    display: flex;
-    align-items: flex-start;
-    margin: 0 auto;
-  }
-`;
-
-const LeftBox = styled.div`
-  @media ${device.sizeInbetween} {
-    width: 66%;
-  }
-`;
-
-const MarginTB = styled.div`
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-`;
-
-const TitleLinguistics = styled.h1`
-  margin: 2rem 0.5rem;
-`;
-
-const StyledLi = styled.li`
-  margin: 0.5rem 2rem;
-  list-style-type: circle;
-`;
-
-const SubTitle = styled.h2`
-  margin: 2rem 0.5rem;
-  font-weight: bold;
-`;
-
-const Links = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 4px;
-  margin: 2rem 1rem;
-  padding: 1.5rem;
-  text-align: center;
-  background: #268bd280;
-  @media ${device.sizeInbetween} {
-    width: 33%;
-    position: sticky; 
-    top: 50px;
-  }
-`;
-
-const StyledLink = styled(Link)`
-  color: #268bd2;
-  text-decoration: underline;
-    &:hover {
-      color: #838383;
-    }
-`;
+import { MarginH1, StyledLinkRouter, H2Title, MediaQueriesBox, LeftBox, StyledLi, MarginTB, LinksWithMedia } from "../views/Styles";
 
 class Linguistics extends Component {
   render() {
     return (
-      <LinguisticsBox>
+      <MediaQueriesBox>
         <LeftBox>
-          <TitleLinguistics>Linguistics</TitleLinguistics>
-          <SubTitle>Degree:</SubTitle>
+          <MarginH1>Linguistics</MarginH1>
+          <H2Title>Degree:</H2Title>
           <ul>
             <StyledLi>M.A. in Spanish & Russian Linguistics & Literature, and Educational Science, FSU Jena / Germany, 2010</StyledLi>
           </ul>
-          <SubTitle>Research interests:</SubTitle>
+          <H2Title>Research interests:</H2Title>
           <ul>
             <StyledLi>Phonetics & Phonology</StyledLi>
             <StyledLi>Phonosemantics / Sound Symbolism, "R"-sound accross languages</StyledLi>
@@ -81,7 +22,7 @@ class Linguistics extends Component {
             <StyledLi>Etymology and linguistic reconstruction</StyledLi>
             <StyledLi>Chomsky's Language Acquisition Device</StyledLi>
           </ul>
-          <SubTitle>Scholarships:</SubTitle>
+          <H2Title>Scholarships:</H2Title>
           <ul>
             <StyledLi>Costa Rica, internship Paniamor, 2009</StyledLi>
             <StyledLi>Birkbeck University of London, internship, 2010</StyledLi>
@@ -89,45 +30,45 @@ class Linguistics extends Component {
             <StyledLi>Paris Alliance Francaise, language course, 2014</StyledLi>
             <StyledLi>Istituto Venezia, language course, 2014</StyledLi>
           </ul>
-          <SubTitle>Taught in:</SubTitle>
+          <H2Title>Taught in:</H2Title>
           <ul>
             <StyledLi>Wellington, New Zealand, 2010/2011</StyledLi>
             <StyledLi>London, UK, 2011 - 2014</StyledLi>
             <StyledLi>Paris, France, 2014 - 2015</StyledLi>
             <StyledLi>Barcelona, Spain, 2015 - 2017</StyledLi>
           </ul>
-          <SubTitle>Reviewing, editorial activity:</SubTitle>
+          <H2Title>Reviewing, editorial activity:</H2Title>
           <ul>
             <StyledLi>London, Mary Glasgow Magazines, 2011/2012</StyledLi>
           </ul>
         </LeftBox>
-        <Links>
+        <LinksWithMedia>
           <MarginTB>
             <p>Thoughts about linguistic curiosities:</p>
-            <StyledLink to="/linguistics/posts">Posts</StyledLink>
+            <StyledLinkRouter to="/linguistics/posts">Posts</StyledLinkRouter>
           </MarginTB>
           <MarginTB>
             <p>First steps into recording a Podcast - in Spanish only:</p>
-            <StyledLink to="/linguistics/podcast">Podcast</StyledLink>
+            <StyledLinkRouter to="/linguistics/podcast">Podcast</StyledLinkRouter>
           </MarginTB>
           <MarginTB>
             <p>Visualisation of sounds & linguistic concepts - in Spanish and English:</p>
-            <StyledLink to="/linguistics/infographics">Infographics</StyledLink>
+            <StyledLinkRouter to="/linguistics/infographics">Infographics</StyledLinkRouter>
           </MarginTB>
           <MarginTB>
             <p>Phonology & Sound Symbolism - From a pointy "i" to a voluminous "a" and "o":</p>
-            <StyledLink to="/linguistics/phonology"><span role="img" aria-label="construction">🚧</span> Phonology</StyledLink>
+            <StyledLinkRouter to="/linguistics/phonology"><span role="img" aria-label="construction">🚧</span> Phonology</StyledLinkRouter>
           </MarginTB>
           <MarginTB>
             <p>Etymology - Origin and underlying meaning of a word:</p>
-            <StyledLink to="/linguistics/etymology"><span role="img" aria-label="construction">🚧</span> Etymology</StyledLink>
+            <StyledLinkRouter to="/linguistics/etymology"><span role="img" aria-label="construction">🚧</span> Etymology</StyledLinkRouter>
           </MarginTB>
           <MarginTB>
             <p>Lessons - German for Spanish speakers:</p>
-            <StyledLink to="/linguistics/lessons"><span role="img" aria-label="construction">🚧</span> Lessons</StyledLink>
+            <StyledLinkRouter to="/linguistics/lessons"><span role="img" aria-label="construction">🚧</span> Lessons</StyledLinkRouter>
           </MarginTB>
-        </Links>
-      </LinguisticsBox>
+        </LinksWithMedia>
+      </MediaQueriesBox>
     );
   }
 }

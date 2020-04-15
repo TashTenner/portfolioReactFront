@@ -1,25 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 import arroba from '../assets/arroba.png';
 import github from '../assets/github.png';
 import linkedin from '../assets/linkedin.png';
 import cv from '../assets/cv.png';
 import PDF from '../assets/TashCV.pdf';
-
-const Styles = styled.div`
-  font-size: 0.8em;
-  border-top: 1px solid #002b36ff;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
-
-const StyledLinkFooter = styled.a`
-  margin: 0.5em;
-`;
+import { Styles, StyledLinkFooter } from "../views/Styles"
 
 export const Footer = () => (
   <Styles>

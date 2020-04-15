@@ -1,39 +1,7 @@
 import React, { Component } from 'react';
 import { Accordion, Card, Button } from 'react-bootstrap';
 import postService from "../../services/postService";
-import styled from 'styled-components';
-
-const Styles = styled.div`
-  button, .btn, .btn-link {
-    color: #268bd2;
-    text-align: left;
-    &:hover {
-      color: #838383;
-      text-decoration: none;
-    }
-    &.active {
-      color: #212529;
-      text-decoration: none;
-    }
-    &:focus {
-      color: #212529;
-      text-decoration: none;
-    }
-  }
-`;
-
-const TitleInfographics = styled.h1`
-  margin: 2rem 0.5rem;
-`;
-
-const StyledDiv = styled.div`
-  margin: 2rem 0.5rem;
-  text-align: justify;
-`;
-
-const StyledImg = styled.img`
-  max-width: 100%;
-`;
+import { StylesInfographicsPodcastPosts, StyledImgInfographics, MarginH1, StyledDiv } from "../Styles"
 
 class Infographics extends Component {
   state = {
@@ -56,8 +24,8 @@ class Infographics extends Component {
   render() {
     const { posts, loading } = this.state;
     return (
-      <Styles>
-        <TitleInfographics>Infographics</TitleInfographics>
+      <StylesInfographicsPodcastPosts>
+        <MarginH1>Infographics</MarginH1>
         <StyledDiv>Did you know the word "talent" was used as a unit to measure? These quotes and linguistic infographics reflect the observations I made in the areas of linguistics, philosophy, psychology, evolution, culture, religion and other interdisciplinary areas.</StyledDiv>
         <StyledDiv><span role="img" aria-label="es">🇪🇸</span> ¿Sabías que la palabra "talento" era una unidad de medida? Estas citas e infografías lingüísticas reflejan las observaciones que hice en las áreas de la lingüística, filosofía, psicología, evolución, cultura, religión y otras áreas interdisciplinarias.</StyledDiv>
         <StyledDiv>
@@ -88,7 +56,7 @@ class Infographics extends Component {
                                         <Card.Body>
                                           <div>{post.pubDate.substring(0, 16)}</div>
                                           <a href={post.linkPic} target="_blank" rel="noopener noreferrer">
-                                            <StyledImg src={post.linkPic} alt="infographic" />
+                                            <StyledImgInfographics src={post.linkPic} alt="infographic" />
                                           </a>
                                         </Card.Body>
                                       </Accordion.Collapse>
@@ -131,7 +99,7 @@ class Infographics extends Component {
                                       <Card.Body>
                                         <div>{post.pubDate.substring(0, 16)}</div>
                                         <a href={post.linkPic} target="_blank" rel="noopener noreferrer">
-                                          <StyledImg src={post.linkPic} alt="infographic" />
+                                          <StyledImgInfographics src={post.linkPic} alt="infographic" />
                                         </a>
                                       </Card.Body>
                                     </Accordion.Collapse>
@@ -150,7 +118,7 @@ class Infographics extends Component {
             </Card>
           </Accordion>
         </StyledDiv>
-      </Styles>
+      </StylesInfographicsPodcastPosts>
     );
   }
 }

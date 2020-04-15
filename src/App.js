@@ -15,7 +15,7 @@ import Plantiful from "./views/WebDevProjects/Plantiful";
 import BailoApp from "./views/WebDevProjects/BailoApp";
 import ReactChallenge from "./views/WebDevProjects/ReactChallenge";
 import Portfolio from "./views/WebDevProjects/Portfolio";
-
+import ReactGraphQL from "./views/WebDevProjects/ReactGraphQL";
 
 import About from "./views/About";
 import Contact from "./views/Contact";
@@ -25,12 +25,6 @@ import NoMatch from "./views/NoMatch";
 import { Layout } from "./Components/Layout";
 import { NavigationBar } from "./Components/NavigationBar";
 import { Jumbotron } from './Components/Jumbotron';
-
-// add podcast from fonetikas, blog
-// some grey: #838383 (RGB	131, 131, 131)
-// dark mode: #4D445C. background light: fcfcff. (MAIN white)
-// #212529 some kind of black
-// colours from quote: #002b36ff (background blue), #fdf6e3 (white text not-use!), yellow/brown: #b58900, blue text: #268bd2
 
 class App extends Component {
   render() {
@@ -56,6 +50,7 @@ class App extends Component {
               <Route exact path="/projects/bailo-app" component={BailoApp} />
               <Route exact path="/projects/react-3-hour-challenge" component={ReactChallenge} />
               <Route exact path="/projects/portfolio" component={Portfolio} />
+              <Route exact path="/projects/react-graphql" component={ReactGraphQL} />
               <Route exact path="/contact" component={Contact} />
               <Route component={NoMatch} />
             </Switch>
