@@ -16,6 +16,7 @@ import BailoApp from "./views/WebDevProjects/BailoApp";
 import ReactChallenge from "./views/WebDevProjects/ReactChallenge";
 import Portfolio from "./views/WebDevProjects/Portfolio";
 import ReactGraphQL from "./views/WebDevProjects/ReactGraphQL";
+import Notebook from "./views/Notebook";
 
 import About from "./views/About";
 import Contact from "./views/Contact";
@@ -51,6 +52,7 @@ class App extends Component {
               <Route exact path="/projects/react-3-hour-challenge" component={ReactChallenge} />
               <Route exact path="/projects/portfolio" component={Portfolio} />
               <Route exact path="/projects/react-graphql" component={ReactGraphQL} />
+              <Route exact path="/notebook" component={Notebook} />
               <Route exact path="/contact" component={Contact} />
               <Route component={NoMatch} />
             </Switch>

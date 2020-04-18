@@ -210,6 +210,10 @@ export const SkillsText = styled.p`
   margin: 2rem 0rem;
 `;
 
+export const StyledP = styled.p`
+  margin: 1rem 0rem;
+`;
+
 export const MarginTBLabel = styled.label`
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
