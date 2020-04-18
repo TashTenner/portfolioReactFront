@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Accordion, Card, Button } from 'react-bootstrap';
 import postService from "../../services/postService";
-import { StylesInfographicsPodcastPosts, MarginH1, StyledDiv } from "../Styles";
+import { StylesInfographicsPodcastPosts, MarginH1, StyledDiv, StyledP } from "../Styles";
 
 class Posts extends Component {
   state = {
@@ -46,8 +46,8 @@ class Posts extends Component {
                           </Card.Header>
                           <Accordion.Collapse eventKey="1">
                             <Card.Body>
-                              <div>{post.pubDate.substring(0, 16)}</div>
-                              <div>{post.encoded[0].__cdata}</div>
+                              <StyledP>{post.pubDate.substring(0, 16)}</StyledP>
+                              <StyledP>{post.encoded[0].__cdata}</StyledP>
                             </Card.Body>
                           </Accordion.Collapse>
                         </Card>

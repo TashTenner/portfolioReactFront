@@ -31,7 +31,8 @@ export const NavigationBar = () => (
             <Dropdown.Item eventKey={3.5} as={Link} to="/projects/portfolio">Portfolio</Dropdown.Item>
             <Dropdown.Item eventKey={3.6} as={Link} to="/projects/react-graphql"><span role="img" aria-label="construction">🚧</span> React & GraphQL</Dropdown.Item>
           </StyledSplitButton>
-          <Nav.Link eventKey={4} as={Link} to="/contact">Contact</Nav.Link>
+          <Nav.Link eventKey={4} as={Link} to="/notebook">Notebook</Nav.Link>
+          <Nav.Link eventKey={5} as={Link} to="/contact">Contact</Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
